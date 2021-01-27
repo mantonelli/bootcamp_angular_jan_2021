@@ -1,0 +1,74 @@
+<po-page-edit
+  [p-title]="titulo"
+  [p-breadcrumb]="breadcrumb"
+  (p-cancel)="onCancel()"
+  (p-save)="onSave()"
+  [p-disable-submit]="!clienteForm.valid"
+>
+  <form [formGroup]="clienteForm">
+    <div class="po-row">
+      <po-input
+        class="po-md-2"
+        name="id"
+        formControlName="id"
+        p-label="ID"
+        [p-disabled]="altera"
+      ></po-input>
+      <po-input
+        class="po-md-10"
+        name="nome"
+        formControlName="nome"
+        p-label="Nome"
+        p-required
+      ></po-input>
+    </div>
+
+    <hr />
+
+    <div class="po-row">
+      <po-select
+        class="po-md-4"
+        name="sexo"
+        formControlName="sexo"
+        p-label="Sexo"
+        [p-options]="sexoOpt"
+      ></po-select>
+      <po-datepicker
+        class="po-md-8"
+        name="dataNascimento"
+        formControlName="dataNascimento"
+        p-label="Data nascimento"
+      >
+      </po-datepicker>
+    </div>
+
+    <hr />
+
+    <div class="po-rpw">
+      <po-input
+        class="po-md-6"
+        name="endereco"
+        formControlName="endereco"
+        p-label="Endereço"
+      ></po-input>
+
+      <po-combo
+        class="po-md-3"
+        name="estado"
+        formControlName="estado"
+        p-label="Estado"
+        [p-options]="estadoOpt"
+        (p-change)="configCidades($event)"
+      ></po-combo>
+
+      <po-combo
+        class="po-md-3"
+        name="cidade"
+        formControlName="cidade"
+        p-label="Cidade"
+        [p-options]="cidadeOpt"
+      >
+      </po-combo>
+    </div>
+  </form>
+</po-page-edit>
