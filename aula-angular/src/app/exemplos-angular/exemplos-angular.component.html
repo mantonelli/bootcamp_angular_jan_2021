@@ -1,0 +1,13 @@
+<button (click)="mostrarAlunos()">{{labelButton}}</button>
+
+<div *ngIf="mostraLista && listaAlunos?.length; else semLista">
+  <ul>
+    <li *ngFor="let aluno of listaAlunos">
+      {{aluno.nome}} - {{aluno.dataNascimento | date:'dd/MM/yyyy'}}
+    </li>
+  </ul>
+</div>
+
+<ng-template #semLista>
+  <p>Sem lista disponível</p>
+</ng-template>

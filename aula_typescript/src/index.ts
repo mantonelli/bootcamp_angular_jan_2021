@@ -8,11 +8,8 @@ import {
 mediaPrecoPedido();
 nomeProdutoMaisBarato();
 
-let arr1 = filtroProdutoPorCodigo('0002');
-console.dir(arr1);
-
-let item1 = buscaProdutoPorNome('PC');
+let item1 = filtroProdutoPorCodigo('0002');
 console.dir(item1);
 
-let item2 = buscaProdutoPorNome('ATARI');
-console.dir(item2);
+let item4 = buscaProdutoPorNome('ATARI');
+console.dir(item4);
